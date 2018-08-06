@@ -1,0 +1,167 @@
+/*隧道*/
+.suiDao{
+    height: 414px;
+    width: 100%;
+}
+.suiDao .sd1{
+    animation: spinZ 20s linear infinite;
+}
+@keyframes spinZ {
+    0% {
+        transform-origin:center;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform-origin:center;
+        transform: rotateZ(360deg);
+    }
+}
+.suiDao{
+    text-align: center;
+    transform:translate(0%,-40%);
+}
+.suiDao .sd1{
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.suiDao .sd2{
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    top: 37%;
+    left: 0;
+}
+/*星星*/
+.xing .xing1{
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    animation: xing1 20s linear infinite;
+}
+@keyframes xing1 {
+    0% {
+        transform:scale(0.1,0.1);
+    }
+    50% {
+        transform:scale(1,1);
+    }
+    100% {
+        transform:scale(0.1,0.1);
+    }
+}
+.xing .xing2{
+    position: absolute;
+    top: -20%;
+    left: 49%;
+    animation: xing2 20s linear infinite;
+}
+@keyframes xing2 {
+    0% {
+        transform:scale(1,1);
+    }
+    50% {
+        transform:scale(0.1,0.1);
+    }
+    100% {
+        transform:scale(1,1);
+    }
+}
+.xing .xing3{
+    position: absolute;
+    top: 20%;
+    left: 62%;
+    animation: xing3 10s linear infinite;
+}
+@keyframes xing3 {
+    0% {
+        transform:scale(0.5,0.5);
+    }
+    50% {
+        transform:scale(1,1);
+    }
+    100% {
+        transform:scale(0.5,0.5);
+    }
+}
+/*朝代*/
+.chaoDai{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.chaoDai .chaoDai1,
+.chaoDai .chaoDai2,
+.chaoDai .chaoDai3{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation:excircle 21s infinite linear;
+    display: none;
+}
+.chaoDai img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    position: absolute;
+}
+.chaoDai  .img1{
+    left: -2%;
+    top: -19%;
+    animation:fillet 21s infinite linear ;
+}
+.chaoDai  .img2{
+    left: 17%;
+    top: 60%;
+    animation:fillet 21s infinite linear ;
+}
+.chaoDai  .img3{
+    left: 48%;
+    top: -33%;
+    animation:fillet 21s infinite linear ;
+}
+/*外圆*/
+@keyframes excircle{
+    from{
+        transform: scale(1,1) rotate(0deg);
+    }
+    to{
+        transform:scale(0,0) rotate(360deg);
+    }
+}
+/*内圆*/
+@keyframes fillet{
+    0%{
+        transform:rotate(360deg);
+        opacity: 0.5;
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*返回首页按钮*/
+.back img{
+    width: 10%;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    transform: rotateY(180deg);
+    z-index: 201;
+}
+/*时间轴按钮*/
+.timeline img{
+    width: 10%;
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    z-index: 201;
+}
