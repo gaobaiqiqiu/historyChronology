@@ -49,8 +49,11 @@ $(function(){
                 /*添加朝代名字、分别保存图片和内容的swiper的ID*/
                 chaodaiList[dynastyList[i]["dynastyId"]] = $($("#template").html().replace("$chaodai$", chaoDaiName).replace("$id1$", swiper1ID ).replace("$id2$", swiper2ID));
                 $(".swiper1").append( chaodaiList[dynastyList[i]["dynastyId"]] );
+
                 //获取session中的值
-                var initIndex = sessionStorage.getItem( dynastyId );
+
+                var initIndex = sessionStorage.getItem(dynastyList[i]["dynastyId"] );
+
                 $.ajax({
                     type: "post",
                     url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
@@ -63,6 +66,7 @@ $(function(){
                         var dynastyId = chaodaiData[0]["dynastyId"]; //拿到各个朝代的ID
                         var chaoDaiIndex = -1;
                         for( var n = 0; n < dynastyList.length; ++n ){
+                            // console.log('各个朝代的ID:'+dynastyId+',当前朝代的ID'+dynastyList[n]["dynastyId"])
                             if( dynastyId == dynastyList[n]["dynastyId"] ){
                                 chaoDaiIndex = n;
                                 break;
@@ -82,7 +86,6 @@ $(function(){
                         $('.chaoDaiBox .swiper-wrapper').css({height:docuHeight+"px"});
                         $('.chaoDaiBox .swiper-slide').css({height:docuHeight+"px"});
 
-
                         if( shouSwiperIndex == chaoDaiIndex ) {
                             loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );
                         }
@@ -93,17 +96,14 @@ $(function(){
                     direction : 'vertical',
                     observer: true,//修改swiper自己或子元素时，自动初始化swiper
                     // observeParents:true,
-                    initialSlide: initIndex != null && shouSwiperIndex == i ? initIndex : 0,
+                    initialSlide: initIndex != null ? initIndex : 0,
                     lazy: {
                         loadPrevNext: true,
                         loadPrevNextAmount: 2
                     },
                     on:{
                         slideChangeTransitionStart: function () {
-                            if( dynastyList[shouSwiperIndex]["dynastyId"] == dynastyId ){
-                                //往session中存储
-                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
-                            }
+
                             //滑动到下一故事时音频暂停重置，内容重新赋值
                             if(playEtext){
                                 var playEtextText = playEtext[0].innerText;
@@ -117,6 +117,15 @@ $(function(){
                             samllIndex = this.activeIndex;
                             loadPage(samllIndex);
 
+                            //只能存储当前朝代，左右滑动到其它朝代时不会往session里存
+                            /*if( dynastyList[shouSwiperIndex]["dynastyId"] == dynastyId ){
+                                //往session中存储
+                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], samllIndex );
+                            }*/
+                            //每个朝代都会存储
+                            if(dynastyList[shouSwiperIndex]["dynastyId"]){
+                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], samllIndex );
+                            }
                         },
                         slideChangeTransitionEnd: function () {
 
@@ -145,9 +154,10 @@ $(function(){
                             }
                         }
                         shouSwiperIndex = this.activeIndex;
-                        sonIndex = SwiperList[dynastyList[shouSwiperIndex]["dynastyId"]].activeIndex;
-                        //console.log(sonIndex);
+                        sonIndex = SwiperList[dynastyList[shouSwiperIndex]["dynastyId"]].activeIndex;   //上下滑动的索引
+                        // console.log('上下滑动索引:'+sonIndex+',左右滑动索引:'+shouSwiperIndex);
                         loadPage( sonIndex );
+
                     },
                     slideChangeTransitionEnd: function () {
 
