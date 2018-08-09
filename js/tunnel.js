@@ -46,7 +46,7 @@ $.ajax({
             $('.chaoDai').append('' +
                 '<div class="chaoDai1" style="display: block; position: absolute;top: 0;width: 100%;height: 100%;animation:excircle 21s infinite linear;">' +
                 '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:-2%;top:-19%;animation:fillet 21s infinite linear ;z-index: 200">' +
+                '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:-2%;top:-19%;animation:fillet 21s infinite linear;">' +
                 '</a>' +
                 '</div>');
         },21000);
@@ -60,7 +60,7 @@ $.ajax({
                 $('.chaoDai').append('' +
                     '<div class="chaoDai2" style="display: block; position: absolute;top: 0;width: 100%;height: 100%;animation:excircle 21s infinite linear;">' +
                     '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:17%;top:60%;animation:fillet 21s infinite linear ;z-index: 150">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:17%;top:60%;animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);
@@ -75,11 +75,19 @@ $.ajax({
                 $('.chaoDai').append('' +
                     '<div class="chaoDai3" style="display: block; position: absolute;top: 0;width: 100%;height: 100%;animation:excircle 21s infinite linear;">' +
                     '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:48%;top:-33%;animation:fillet 21s infinite linear ;z-index: 120">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:48%;top:-33%;animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);
         },14000);
+
+        var imgAll = document.querySelectorAll('.chaoDai img');
+        console.log(imgAll)
+        for(var j=0;j<imgAll.length;j++){
+            console.log($(imgAll[j])[0].width)
+        }
     }
 });
+
+
 

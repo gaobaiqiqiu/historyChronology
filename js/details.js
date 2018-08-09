@@ -50,8 +50,15 @@ $(function(){
                 chaodaiList[dynastyList[i]["dynastyId"]] = $($("#template").html().replace("$chaodai$", chaoDaiName).replace("$id1$", swiper1ID ).replace("$id2$", swiper2ID));
                 $(".swiper1").append( chaodaiList[dynastyList[i]["dynastyId"]] );
 
+                var initIndex = '';
+                if(dynastyList[shouSwiperIndex]["dynastyId"] == dynastyId){
+                    initIndex = sessionStorage.getItem(dynastyId)
+                }else{
+                    initIndex = sessionStorage.getItem(dynastyList[i]["dynastyId"] );
+                }
                 //获取session中的值
-                var initIndex = sessionStorage.getItem(dynastyList[i]["dynastyId"] );
+                // var initIndex = sessionStorage.getItem(dynastyList[i]["dynastyId"] );
+                
 
                 $.ajax({
                     type: "post",
@@ -84,11 +91,10 @@ $(function(){
                         }
                         $('.chaoDaiBox .swiper-wrapper').css({height:docuHeight+"px"});
                         $('.chaoDaiBox .swiper-slide').css({height:docuHeight+"px"});
-
-                        // if( shouSwiperIndex == chaoDaiIndex ) {    
-                        //     console.log(initIndex)     //initIndex是undefined；          
-                        //     loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );                            
-                        // }
+                        //点击朝代进入时，点击音频按钮，播放当前显示的语音
+                        if( shouSwiperIndex == chaoDaiIndex ) {        
+                            loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );                            
+                        }
                     }
                 });
                 //上下滑动
@@ -116,7 +122,6 @@ $(function(){
                             //滑动到下一故事时音频暂停重置，内容重新赋值
                             if(playEtext){
                                 var playEtextText = playEtext[0].innerText;
-                                // console.log(playAudio);
                                 if( playAudio ){
                                     playAudio[0].pause();
                                     playAudio[0].load();
@@ -144,7 +149,6 @@ $(function(){
                 on:{
                     slideChangeTransitionStart:function(){
                         //滑动到下一朝代时音频暂停并重置，内容重新赋值
-                        // console.log(playEtext);
                         if(playEtext){
                             var playEtextText = playEtext[0].innerText;
                             if( playAudio ){
@@ -167,24 +171,25 @@ $(function(){
             mySwiper.slideTo( shouSwiperIndex, 200, false );
         }
     });
-    /*点击按钮播放音频，调用卡拉OK效果*/
-    $('.audio').click(function(){
-        var playEtextText = playEtext[0].innerText;
-        if( playAudio[0].paused ){
-            playAudio[0].play();
-            _processK();
-        }else{
-            playAudio[0].pause();
-            playAudio[0].load();
-            playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
-        }
-    });
+    
 });
 /*点击返回时空隧道页*/
 $('.back2').click(function(){
     window.location.href="tunnel.html";
 });
-
+/*点击按钮播放音频，调用卡拉OK效果*/
+$('.audio').click(function(){
+    console.log(playEtext)
+    var playEtextText = playEtext[0].innerText;
+    if( playAudio[0].paused ){
+        playAudio[0].play();
+        _processK();
+    }else{
+        playAudio[0].pause();
+        playAudio[0].load();
+        playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
+    }
+});
 function loadPage( index ) {
     if( !mySwiper ) {
         return;
@@ -247,7 +252,7 @@ function loadPage( index ) {
                 if (count >= pos) {
                     _process += _ps;
                     if(_ep){
-                        _ep.style.backgroundImage = "-webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), -webkit-linear-gradient(left, #fff " + _process + "%, #00f 0%)";
+                        _ep.style.backgroundImage = "-webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), -webkit-linear-gradient(left, #fff " + _process + "%, rgba(255,255,255,0.5) 0%)";
                     }
                     if (_process >= 99) {
                         if ((_index+1) >= _eps.length) { //该句结束退出
