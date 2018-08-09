@@ -51,7 +51,6 @@ $(function(){
                 $(".swiper1").append( chaodaiList[dynastyList[i]["dynastyId"]] );
 
                 //获取session中的值
-
                 var initIndex = sessionStorage.getItem(dynastyList[i]["dynastyId"] );
 
                 $.ajax({
@@ -86,9 +85,10 @@ $(function(){
                         $('.chaoDaiBox .swiper-wrapper').css({height:docuHeight+"px"});
                         $('.chaoDaiBox .swiper-slide').css({height:docuHeight+"px"});
 
-                        if( shouSwiperIndex == chaoDaiIndex ) {
-                            loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );
-                        }
+                        // if( shouSwiperIndex == chaoDaiIndex ) {    
+                        //     console.log(initIndex)     //initIndex是undefined；          
+                        //     loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );                            
+                        // }
                     }
                 });
                 //上下滑动
@@ -104,6 +104,15 @@ $(function(){
                     on:{
                         slideChangeTransitionStart: function () {
 
+                            //只能存储当前朝代，左右滑动到其它朝代时不会往session里存
+                            /*if( dynastyList[shouSwiperIndex]["dynastyId"] == dynastyId ){
+                                //往session中存储
+                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
+                            }*/
+                            //每个朝代都会存储
+                            if(dynastyList[shouSwiperIndex]["dynastyId"]){
+                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
+                            }
                             //滑动到下一故事时音频暂停重置，内容重新赋值
                             if(playEtext){
                                 var playEtextText = playEtext[0].innerText;
@@ -117,15 +126,6 @@ $(function(){
                             samllIndex = this.activeIndex;
                             loadPage(samllIndex);
 
-                            //只能存储当前朝代，左右滑动到其它朝代时不会往session里存
-                            /*if( dynastyList[shouSwiperIndex]["dynastyId"] == dynastyId ){
-                                //往session中存储
-                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], samllIndex );
-                            }*/
-                            //每个朝代都会存储
-                            if(dynastyList[shouSwiperIndex]["dynastyId"]){
-                                sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], samllIndex );
-                            }
                         },
                         slideChangeTransitionEnd: function () {
 
