@@ -22,6 +22,7 @@ var swiperAllIn = []; //所有的朝代内容
 var swiperAll = [];  //所有的朝代内容分别对应的歌词
 var samllIndex = 0;  //上下滑动时朝代中内容的索引
 var _processK; //调用卡拉ok效果
+
 $(function(){
     $.ajax({
         type:"post",
