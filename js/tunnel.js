@@ -32,89 +32,9 @@ $.ajax({
             }
         }
 
-        // setInterval(function(){
-        //     var angle = 0.0;
-        //     var random = Math.floor(Math.random()* arrAll.length);
-        //     console.log(random)
-        //     $('.chaoDai').append($('#template2').html().replace('$href$','details.html?dynastyId='+arrAll[random].animalId).replace('$url$','http://www.dadpat.com/'+arrAll[random].attUrl))
-        //     var timer = setInterval(function(){         
-        //         //图片旋转的锚点
-        //         var bacOrgLeft = docuWidth/2 - $('#chaoDai2')[0].offsetLeft +'px';
-        //         var bacOrgHeight = docuHeight/2 - $('#chaoDai2')[0].offsetTop  +'px';
-        //         $('#chaoDai2').css('transform-origin', bacOrgLeft + ' ' + bacOrgHeight )
-        //         if(angle <= 360 ){
-        //             var box = document.getElementById('chaoDai2');
-        //             box.style.transform = "rotate(" + (angle += .1) + "deg ) scale(" + ( 1.0 - angle / 360.0 ) + ")";
-        //             var Img = document.getElementById('im2');
-        //             Img.style.transform = "rotate(" + (-angle) + "deg )";
-        //             // console.log(time)
-        //         }else{
-        //             clearInterval(timer)
-        //             $('#chaoDai2').remove();
-        //         }
-        //     }, 1);
-        // },7200)
-        
-
-        
-        
-        // setTimeout(function(){
-        //     setInterval(function(){
-        //         var angle = 0.0;
-        //         var random = Math.floor(Math.random()* arrAll.length);
-        //         console.log(random)
-        //         $('.chaoDai').append($('#template1').html().replace('$href$','details.html?dynastyId='+arrAll[random].animalId).replace('$url$','http://www.dadpat.com/'+arrAll[random].attUrl))
-        //         var timer = setInterval(function(){
-        //             //图片旋转的锚点
-        //             var bacOrgLeft = docuWidth/2 - $('#chaoDai1')[0].offsetLeft +'px';
-        //             var bacOrgHeight = docuHeight/2 - $('#chaoDai1')[0].offsetTop  +'px';
-        //             $('#chaoDai1').css('transform-origin', bacOrgLeft + ' ' + bacOrgHeight )
-        //             if(angle <= 360 ){
-        //                 var box = document.getElementById('chaoDai1');
-        //                 box.style.transform = "rotate(" + (angle += .1) + "deg ) scale(" + ( 1.0 - angle / 360.0 ) + ")";
-        //                 var Img = document.getElementById('im');
-        //             Img.style.transform = "rotate(" + (-angle) + "deg )";
-        //             }else{
-        //                 clearInterval(timer)
-        //                 $('#chaoDai1').remove();
-        //             }
-        //         }, 1);
-        //     },7200)   
-        // },3600)
-
-        // setTimeout(function(){
-        //     var angle = 0.0;
-        //     var random = Math.floor(Math.random()* arrAll.length);
-        //     console.log(random)
-        //     $('.chaoDai').append($('#template3').html().replace('$href$','details.html?dynastyId='+arrAll[random].animalId).replace('$url$','http://www.dadpat.com/'+arrAll[random].attUrl))
-        //     var timer = setInterval(function(){
-        //         //图片旋转的锚点
-        //         var bacOrgLeft = docuWidth/2 - $('#chaoDai3')[0].offsetLeft +'px';
-        //         var bacOrgHeight = docuHeight/2 - $('#chaoDai3')[0].offsetTop  +'px';
-        //         $('#chaoDai3').css('transform-origin', bacOrgLeft + ' ' + bacOrgHeight )
-        //         if(angle <= 360 ){
-        //             var box = document.getElementById('chaoDai3');
-        //             box.style.transform = "rotate(" + (angle += .1) + "deg ) scale(" + ( 1.0 - angle / 360.0 ) + ")";
-        //             var Img = document.getElementById('im3');
-        //         Img.style.transform = "rotate(" + (-angle) + "deg )";
-        //         }else{
-        //             clearInterval(timer)
-        //             $('#chaoDai3').remove();
-        //         }
-        //     }, 1);
-        // },7200)
-        
-
-
-
-
-
-
-
-
         $('.chaoDai').append('<div class="chaoDai1" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px; position: absolute;left: -' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[1].animalId+'"><img src="http://www.dadpat.com/'+arrAll[1].attUrl+'" class="img1"></a></div>');
-        $('.chaoDai').append('<div class="chaoDai2" style="transform-origin: -' + docuWidth * 0.1 + 'px ' + docuHeight + 'px; position: absolute;left: ' + docuWidth * 0.6 + 'px; top: -' + docuHeight * 0.5 + 'px; animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[2].animalId+'"><img src="http://www.dadpat.com/'+arrAll[2].attUrl+'" class="img2"></a></div>');
-        $('.chaoDai').append('<div class="chaoDai3" style="transform-origin: ' + docuWidth * 0.6 + 'px -' + docuHeight * 0.1 + 'px;position: absolute;left: -' + docuWidth * 0.1 + 'px; top: ' + docuHeight * 0.6 + 'px;animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[3].animalId+'"><img src="http://www.dadpat.com/'+arrAll[3].attUrl+'" class="img3"></a></div>');
+        $('.chaoDai').append('<div class="chaoDai2" style="transform-origin: ' + docuWidth * 0.6 + 'px -' + docuHeight * 0.1 + 'px;position: absolute;left: -' + docuWidth * 0.1 + 'px; top: ' + docuHeight * 0.6 + 'px; animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[2].animalId+'"><img src="http://www.dadpat.com/'+arrAll[2].attUrl+'" class="img2"></a></div>');
+        $('.chaoDai').append('<div class="chaoDai3" style="transform-origin: -' + docuWidth * 0.1 + 'px ' + docuHeight + 'px; position: absolute;left: ' + docuWidth * 0.6 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[3].animalId+'"><img src="http://www.dadpat.com/'+arrAll[3].attUrl+'" class="img3"></a></div>');
 
         /*朝代*/
         var chaoDaiC = document.querySelector('.chaoDai');
@@ -123,9 +43,9 @@ $.ajax({
             chaoDaiC.removeChild(name1[0]);
             var random = Math.floor(Math.random()* arrAll.length);
             $('.chaoDai').append('' +
-                '<div class="chaoDai1" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px;position: absolute;left: -' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
+                '<div class="chaoDai1" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px; position: absolute;left: -' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
                 '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:-2%;top:-19%;animation:fillet 21s infinite linear;">' +
+                '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                 '</a>' +
                 '</div>');
         },21000);
@@ -137,9 +57,9 @@ $.ajax({
                 chaoDaiC.removeChild(name2[0]);
                 var random = Math.floor(Math.random()* arrAll.length);
                 $('.chaoDai').append('' +
-                    '<div class="chaoDai2" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px; position: absolute;left: ' + docuWidth * 0.25 + 'px; top: ' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
+                    '<div class="chaoDai2" style="display: block; transform-origin: ' + docuWidth * 0.6 + 'px -' + docuHeight * 0.1 + 'px;position: absolute;left: -' + docuWidth * 0.1 + 'px; top: ' + docuHeight * 0.6 + 'px; animation:excircle 21s infinite linear;">' +
                     '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:17%;top:60%;animation:fillet 21s infinite linear;">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);
@@ -152,9 +72,9 @@ $.ajax({
                 chaoDaiC.removeChild(name3[0]);
                 var random = Math.floor(Math.random()* arrAll.length);
                 $('.chaoDai').append('' +
-                    '<div class="chaoDai3" style="display: block;  transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px;position: absolute;left: ' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
+                    '<div class="chaoDai3" style="display: block;transform-origin: -' + docuWidth * 0.1 + 'px ' + docuHeight + 'px; position: absolute;left: ' + docuWidth * 0.6 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
                     '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="left:48%;top:-33%;animation:fillet 21s infinite linear;">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);

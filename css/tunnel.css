@@ -136,7 +136,7 @@
     width: 1px;
     height: 1px;
     animation:excircle 21s infinite linear;
-    /* display: none; */
+    display: none;
 }
 .chaoDai img{
     width:auto;
@@ -144,18 +144,12 @@
     position: absolute;
 }
 .chaoDai  .img1{
-    /* left: -2%;
-    top: -19%; */
     animation:fillet 21s infinite linear ;
 }
 .chaoDai  .img2{
-    /* left: 17%;
-    top: 60%; */
     animation:fillet 21s infinite linear ;
 }
 .chaoDai  .img3{
-    /* left: 48%;
-    top: -33%; */
     animation:fillet 21s infinite linear ;
 } 
 /*外圆*/
