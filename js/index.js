@@ -30,6 +30,8 @@ $('.progress .img3').on('touchmove',function (e) {
     $('.progress .img3').css('left',x + 'px');
     $('.progress .img1').css('width',img1Width + 'px');
 
+    
+    //触摸有小星星跟随移动特效
     //判断触摸时间，毫秒
     var newdate = new Date();
     if( newdate - prvedate < 20 ){
