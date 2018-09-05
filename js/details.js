@@ -73,12 +73,7 @@ $(function(){
                     dataType: "jsonp", //以键/值对的形式
                     async: true,
                     data:{"dynastyId": dynastyList[i]["dynastyId"] },
-                    success: function (data) {
-                        
-
-
-
-                        
+                    success: function (data) {        
                         var chaodaiData = data.data;  //拿到各个朝代的data
                         //console.log(chaodaiData);
                        
@@ -109,7 +104,6 @@ $(function(){
                         if( shouSwiperIndex == chaoDaiIndex ) {        
                             loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );                            
                         }
-
 
                     }
                 });
@@ -162,6 +156,7 @@ $(function(){
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 },
+                
                 on:{
                     slideChangeTransitionStart:function(){
                         //滑动到下一朝代时音频暂停并重置，内容重新赋值

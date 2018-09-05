@@ -120,13 +120,14 @@
 /*朝代内容*/
 .chaoDaiFu{
     position: absolute;
-    /* width: 21%; */
-    width: 39%;
+    width: 21%;
+    /* width: 39%; */
     top: 19%;
     right: 11%;
     height: 56%;
-    /* overflow-y: hidden; */
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    /* z-index: 1000; */
 }
 /*.chaoDaiFu .content{
     font-size: 0.3rem;
@@ -147,20 +148,20 @@
 
 
 /*朝代图片*/
-/* .border{
+.border{
     position: absolute;
     height: 74%;
     width: 55%;
     top: 9%;
     left: 12%;
-} */
-.border{
+}
+/* .border{
     position: absolute;
     height: 60%;
     width: 35%;
     top: 18%;
     left: 12%;
-}
+} */
 .border img{
     height: 100%;
     width: 100%;
