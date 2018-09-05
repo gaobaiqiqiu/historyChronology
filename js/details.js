@@ -1,3 +1,10 @@
+// console.log(dynastyInfo/getAllList.do/acfe11e8ba4e11dc7a118cee4209a951)
+                            
+$('.audio').click(function(){
+
+})
+
+
 /*3秒后将上下提示箭头隐藏*/
 setTimeout(function(){
     $('.icon').css('display','none')
@@ -67,8 +74,14 @@ $(function(){
                     async: true,
                     data:{"dynastyId": dynastyList[i]["dynastyId"] },
                     success: function (data) {
+                        
+
+
+
+                        
                         var chaodaiData = data.data;  //拿到各个朝代的data
                         //console.log(chaodaiData);
+                       
                         var dynastyId = chaodaiData[0]["dynastyId"]; //拿到各个朝代的ID
                         var chaoDaiIndex = -1;
                         for( var n = 0; n < dynastyList.length; ++n ){
@@ -88,6 +101,7 @@ $(function(){
                             chaodaiList[dynastyList[chaoDaiIndex]["dynastyId"]].find("#swiper1" + dynastyList[chaoDaiIndex]["dynastyId"] + ">.swiper-wrapper").append($("#template1").html().replace("$img$","http://www.dadpat.com/"+chaodaiData[j]["image"][0]["imageUrl"]).replace("$content$",chaodaiData[j]["dynastyDescp"].split(";")[0]).replace("$audio$","http://www.dadpat.com/"+chaodaiData[j]['audio'][0]['attUrl']));
                             swiperAllIn.push(chaodaiData[j]["dynastyDescp"].split(";")[0]);
                             swiperAll.push(chaodaiData[j]["dynastyDescp"].split(";")[1]);
+                            console.log(chaodaiData[j].audio.length)
                         }
                         $('.chaoDaiBox .swiper-wrapper').css({height:docuHeight+"px"});
                         $('.chaoDaiBox .swiper-slide').css({height:docuHeight+"px"});
@@ -95,6 +109,8 @@ $(function(){
                         if( shouSwiperIndex == chaoDaiIndex ) {        
                             loadPage( initIndex != null && shouSwiperIndex == chaoDaiIndex ? initIndex : 0 );                            
                         }
+
+
                     }
                 });
                 //上下滑动
@@ -190,6 +206,11 @@ $('.audio').click(function(){
         playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
     }
 });
+
+$(".chaoDaiFu").scroll(function() {
+    return false;
+  });
+
 function loadPage( index ) {
     if( !mySwiper ) {
         return;

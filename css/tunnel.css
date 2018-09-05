@@ -94,41 +94,6 @@
     top: 0;
     left: 0;
 }
-
-/* .chaoDai #chaoDai1{
-    position: absolute;
-    left: 5%;
-    top: 21%;
-    width: 20%;
-    transform:rotate( 45deg );
-}
-.chaoDai #chaoDai1 img{
-    width: 100%;
-}
-.chaoDai #chaoDai2{
-    position: absolute;
-    left: 69%;
-    top: -12%;;
-    width: 36%;
-    transform:rotate( 45deg );
-}
-.chaoDai #chaoDai2 img{
-    width: 100%;
-}
-.chaoDai #chaoDai3{
-    position: absolute;
-    right: 27%;
-    top: 69%;
-    width: 20%;
-    transform:rotate( 45deg );
-}
-.chaoDai #chaoDai3 img{
-    width: 100%;
-} */
-
-
-
-
 .chaoDai .chaoDai1,
 .chaoDai .chaoDai2,
 .chaoDai .chaoDai3{
@@ -175,16 +140,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /*返回首页按钮*/
 .back img{
     width: 10%;
@@ -201,4 +156,26 @@
     right: 1%;
     bottom: 1%;
     z-index: 201;
+}
+
+
+
+
+/* 流星 */
+#start{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    animation:move 2s infinite linear;
+}
+@keyframes move{
+    0%{
+        transform:translate(0px,0px);
+        opacity: 1;
+    }
+    100%{
+        transform:translate(-300px,300px);
+        opacity: 0;
+    }
 }

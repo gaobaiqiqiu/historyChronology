@@ -22,15 +22,36 @@ $.ajax({
     success:function(data){
         console.log(data.data);
         var datas = data.data;
-        var  arrAll = [];
+        var arrAll = [];
+        var randomAll1 = [];
+        var randomAll2 = [];
+        var randomAll3 = [];
         for(var i=0;i<datas.length;i++){
             var datasLeng = datas[i].dynastyCover;
             if(datasLeng != null){
                 for(var a=0;a<datasLeng.length;a++){
                     arrAll.push(datasLeng[a]);
                 }
-            }
+            }   
         }
+
+        for(var i=0;i<arrAll.length;i++){
+            randomAll1.push(i);
+            randomAll2.push(i);
+            randomAll3.push(i);
+        }
+        var ran1 = 0;
+        var ran2 = 0;
+        var ran3 = 0;
+        randomAll1.sort(function(){
+            return Math.random() - 0.5;
+        });
+        randomAll2.sort(function(){
+            return Math.random() - 0.5;
+        });
+        randomAll3.sort(function(){
+            return Math.random() - 0.5;
+        });
 
         $('.chaoDai').append('<div class="chaoDai1" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px; position: absolute;left: -' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[1].animalId+'"><img src="http://www.dadpat.com/'+arrAll[1].attUrl+'" class="img1"></a></div>');
         $('.chaoDai').append('<div class="chaoDai2" style="transform-origin: ' + docuWidth * 0.6 + 'px -' + docuHeight * 0.1 + 'px;position: absolute;left: -' + docuWidth * 0.1 + 'px; top: ' + docuHeight * 0.6 + 'px; animation:excircle 21s infinite linear;"><a href="details.html?dynastyId='+arrAll[2].animalId+'"><img src="http://www.dadpat.com/'+arrAll[2].attUrl+'" class="img2"></a></div>');
@@ -41,11 +62,14 @@ $.ajax({
         setInterval(function () {
             var name1 = document.getElementsByClassName("chaoDai1");
             chaoDaiC.removeChild(name1[0]);
-            var random = Math.floor(Math.random()* arrAll.length);
+            ran1++;
+            if(ran1>randomAll1.length-1){
+                ran1 = 0;
+            }
             $('.chaoDai').append('' +
                 '<div class="chaoDai1" style="display: block; transform-origin: ' + docuWidth + 'px ' + docuHeight + 'px; position: absolute;left: -' + docuWidth * 0.5 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
-                '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
+                '<a href="details.html?dynastyId='+arrAll[randomAll1[ran1]].animalId+'">' +
+                '<img src="http://www.dadpat.com/'+arrAll[randomAll1[ran1]].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                 '</a>' +
                 '</div>');
         },21000);
@@ -55,11 +79,15 @@ $.ajax({
             setInterval(function () {
                 var name2 = document.getElementsByClassName("chaoDai2");
                 chaoDaiC.removeChild(name2[0]);
-                var random = Math.floor(Math.random()* arrAll.length);
+                ran2++;
+                console.log(randomAll2[ran2])
+                if(ran2>randomAll2.length-1){
+                    ran2 = 0;
+                }
                 $('.chaoDai').append('' +
                     '<div class="chaoDai2" style="display: block; transform-origin: ' + docuWidth * 0.6 + 'px -' + docuHeight * 0.1 + 'px;position: absolute;left: -' + docuWidth * 0.1 + 'px; top: ' + docuHeight * 0.6 + 'px; animation:excircle 21s infinite linear;">' +
-                    '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
+                    '<a href="details.html?dynastyId='+arrAll[randomAll2[ran2]].animalId+'">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[randomAll2[ran2]].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);
@@ -70,17 +98,19 @@ $.ajax({
             setInterval(function () {
                 var name3 = document.getElementsByClassName("chaoDai3");
                 chaoDaiC.removeChild(name3[0]);
-                var random = Math.floor(Math.random()* arrAll.length);
+                ran3++;
+                console.log(randomAll3[ran3])
+                if(ran3>randomAll3.length-1){
+                    ran3 = 0;
+                }
                 $('.chaoDai').append('' +
                     '<div class="chaoDai3" style="display: block;transform-origin: -' + docuWidth * 0.1 + 'px ' + docuHeight + 'px; position: absolute;left: ' + docuWidth * 0.6 + 'px; top: -' + docuHeight * 0.5 + 'px;animation:excircle 21s infinite linear;">' +
-                    '<a href="details.html?dynastyId='+arrAll[random].animalId+'">' +
-                    '<img src="http://www.dadpat.com/'+arrAll[random].attUrl+'" style="animation:fillet 21s infinite linear;">' +
+                    '<a href="details.html?dynastyId='+arrAll[randomAll3[ran3]].animalId+'">' +
+                    '<img src="http://www.dadpat.com/'+arrAll[randomAll3[ran3]].attUrl+'" style="animation:fillet 21s infinite linear;">' +
                     '</a>' +
                     '</div>');
             },21000);
         },14000);
     }
 });
-
-
 
