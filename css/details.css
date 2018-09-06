@@ -87,7 +87,17 @@
 }
 
 /*朝代*/
+.dynasty{
+    height: 72%;
+    width: 77.8%;
+    position: relative;
+    top: 8.8%;
+    left: 11%;
+    background: url(../image/border.png) no-repeat;
+    background-size: cover;
+}
 .chaoDaiBox{
+    height: 100%;
     position: relative;
 }
 
@@ -97,11 +107,10 @@
     src : url('../js/hkhbt-W12.ttf');
 }
 .chaoDai{
-    width: 19%;
+    width: 25%;
     position: absolute;
-    right: 12%;
+    right: 17%;
     top: 0;
-    margin-top: 3%;
     z-index: 100;
 }
 .chaoDai .title{
@@ -118,50 +127,34 @@
     margin-left: 2%;
 }
 /*朝代内容*/
-.chaoDaiFu{
+.chaoDaiBox #swiper-container2{
     position: absolute;
-    width: 21%;
-    /* width: 39%; */
-    top: 19%;
-    right: 11%;
-    height: 56%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    /* z-index: 1000; */
+    width: 50%;
+    top: 21.6%;
+    left: 46%;
+    height: 70%;
+    
 }
-/*.chaoDaiFu .content{
+.chaoDaiBox #swiper-container2 .swiper-slide{
+    height: auto;
+}
+.chaoDaiBox #swiper-container2 p{
     font-size: 0.3rem;
-    color: #fffeff;
-}*/
-.chaoDaiFu p{
-    font-size: 0.3rem;
-    /*color: #fffeff;*/
     float: left;
     background:-webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), -webkit-linear-gradient(left, rgba(255,255,255,0.5) 100%, rgba(255,255,255,0) 0%);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    /*-webkit-text-stroke:1px #f00;*/
     -webkit-filter:drop-shadow(0px 0px 1px #fff);
-
-    /* height: 100%; */
 }
-
 
 /*朝代图片*/
 .border{
     position: absolute;
-    height: 74%;
-    width: 55%;
-    top: 9%;
-    left: 12%;
+    height: 53%;
+    width: 37%;
+    top: 19%;
+    left: 4.4%;
 }
-/* .border{
-    position: absolute;
-    height: 60%;
-    width: 35%;
-    top: 18%;
-    left: 12%;
-} */
 .border img{
     height: 100%;
     width: 100%;
@@ -179,9 +172,9 @@
 }*/
 
 /*改swiper组件*/
-.swiper-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+#swiper-container {
+    height: 96%;
+    width: 98%;
+    padding-top: 1%;
 }
 

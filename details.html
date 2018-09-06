@@ -14,13 +14,16 @@
 <body>
 <div id="dv" style="background:url('./image/background.png') no-repeat;background-size: cover;overflow: hidden;">
     <!--朝代-->
-    <div class="swiper-container" id="swiper-container">
-        <div class="swiper-wrapper swiper1">
-
+    <div class="dynasty">
+        <div class="swiper-container" id="swiper-container">
+            <div class="swiper-wrapper swiper1">
+    
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </div>
+    
     <!--上、下、音乐、返回-->
     <div class="button">
         <img src="image/back2.png" class="back2">
@@ -56,7 +59,7 @@
 <div id="template" style="display: none;">
     <div class="swiper-slide">
         <div class="chaoDaiBox">
-            <div class="swiper-container" id="$id1$">
+            <div class="swiper-container swiperIndex" id="$id1$">
                 <div class="swiper-wrapper">
                     <!--朝代图片及内容-->
                 </div>
@@ -75,8 +78,12 @@
         <div class="border">
             <img data-src="$img$" class="swiper-lazy">
         </div>
-        <div class="chaoDaiFu" id="text">
-            <p class="content">$content$</p>
+        <div class="swiper-container" id="swiper-container2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                    <p class="content">$content$</p>
+              </div>
+            </div>
         </div>
         <!--音频-->
         <audio src="$audio$"></audio>

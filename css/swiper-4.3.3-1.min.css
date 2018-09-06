@@ -16,10 +16,9 @@
 .swiper-button-next,
 .swiper-button-prev{
     position: absolute;
-    top: 50%;
+    top: 41%;
     width: 10%;
-    height: 18%;
-    margin-top: -29px;
+    height: 19%;
     z-index: 10;
     cursor: pointer;
     background-size: 90% 90%;
@@ -28,8 +27,8 @@
     outline: none;}
 .swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}
 /*改变左右按钮*/
-.swiper-button-prev,.swiper-container-rtl .swiper-button-next{background-image:url("../image/left.png");left:5px;right:auto;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-.swiper-button-next,.swiper-container-rtl .swiper-button-prev{background-image:url("../image/right.png");right:5px;left:auto;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+.swiper-button-prev,.swiper-container-rtl .swiper-button-next{background-image:url("../image/left.png");left:-64px;right:auto;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+.swiper-button-next,.swiper-container-rtl .swiper-button-prev{background-image:url("../image/right.png");right:-64px;left:auto;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 /*改变上下按钮*/
 #swiper-container1 .swiper-button-prev{background-image:url("../image/upper.png");left: 226px;}
 #swiper-container1 .swiper-button-next{background-image:url("../image/lower.png");left:150px;right:auto}
