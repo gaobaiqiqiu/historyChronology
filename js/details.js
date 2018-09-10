@@ -217,7 +217,7 @@ $('.back2').click(function(){
 /*点击按钮播放音频，调用卡拉OK效果*/
 $('.audio').click(function(){
     console.log(playEtext)
-    var playEtextText = playEtext[0].innerText;
+    //var playEtextText = playEtext[0].innerText;
     if( playAudio[0].paused ){
         playAudio[0].play();
         console.log(playAudio[0].paused )
