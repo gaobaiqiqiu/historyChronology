@@ -113,7 +113,7 @@ $(function(){
                             mousewheel: true,
                         });
                     }
-                });
+                })  ;
                 //上下滑动
                 SwiperList[dynastyList[i]["dynastyId"]] = new Swiper('#' + swiper1ID,{
                     direction : 'vertical',
@@ -136,14 +136,22 @@ $(function(){
                                 sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
                             }
                             //滑动到下一故事时音频暂停重置，内容重新赋值
-                            if(playEtext){
-                                var playEtextText = playEtext[0].innerText;
-                                if( playAudio ){
-                                    playAudio[0].pause();
-                                    playAudio[0].load();
-                                    playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
-                                }
+                            if(playAudio){
+                                playAudio[0].pause();
+                                playAudio[0].load();
                             }
+                            
+
+                            // if(playEtext){
+                            //     var playEtextText = playEtext[0].innerText;
+                            //     if( playAudio ){
+                            //         playAudio[0].pause();
+                            //         playAudio[0].load();
+                            //         console.log(playEtext[0])
+                            //         playEtext[0].innerHTML = playEtextText;
+                            //     }
+                            // }
+
                             samllIndex = this.activeIndex;
                             console.log(this.activeIndex)
                             loadPage(samllIndex);
@@ -154,7 +162,7 @@ $(function(){
 
                         }
                     }
-                });                
+                });               
             }
             /*左右滑动*/
             mySwiper = new Swiper('#swiper-container', {
@@ -168,14 +176,19 @@ $(function(){
                 on:{
                     slideChangeTransitionStart:function(){
                         //滑动到下一朝代时音频暂停并重置，内容重新赋值
-                        if(playEtext){
-                            var playEtextText = playEtext[0].innerText;
-                            if( playAudio ){
-                                playAudio[0].pause();
-                                playAudio[0].load();
-                                playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
-                            }
+                        if(playAudio){
+                            playAudio[0].pause();
+                            playAudio[0].load();
                         }
+                         
+                        // if(playEtext){
+                        //     var playEtextText = playEtext[0].innerText;
+                        //     if( playAudio ){
+                        //         playAudio[0].pause();
+                        //         playAudio[0].load();
+                        //         playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
+                        //     }
+                        // }
                         shouSwiperIndex = this.activeIndex;
                         sonIndex = SwiperList[dynastyList[shouSwiperIndex]["dynastyId"]].activeIndex;   //上下滑动的索引
                         // console.log('上下滑动索引:'+sonIndex+',左右滑动索引:'+shouSwiperIndex);
@@ -217,7 +230,7 @@ $('.audio').click(function(){
     }else{
         playAudio[0].pause();
         playAudio[0].load();
-        playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
+        // playEtext[0].innerHTML = '<p>'+playEtextText+'</p>';
     }
 });
 
@@ -233,8 +246,8 @@ function loadPage( index ) {
     console.log('上下滑动索引:'+sonIndex+',左右滑动索引:'+shouSwiperIndex);
     // var _etext = $("#swiper-container .swiper-container:eq(" + shouSwiperIndex +  ") .swiper-wrapper>div:eq(" + sonIndex +  ") #swiper-container2");
     // var _audio = $("#swiper-container .swiper-container:eq(" + shouSwiperIndex +  ") .swiper-wrapper>div:eq(" + sonIndex +  ") audio");
-    var _etext = $("#swiper-container .swiperIndex:eq(" + shouSwiperIndex +  ") .swiper-wrapper>div:eq(" + sonIndex +  ") #swiper-container2");
-    var _audio = $("#swiper-container .swiperIndex:eq(" + shouSwiperIndex +  ") .swiper-wrapper>div:eq(" + sonIndex +  ") audio");
+    var _etext = $("#swiper-container .swiperIndex:eq(" + shouSwiperIndex +  ") .swiperWrapperIndex>div:eq(" + sonIndex +  ") #swiper-container2 p");
+    var _audio = $("#swiper-container .swiperIndex:eq(" + shouSwiperIndex +  ") .swiperWrapperIndex>div:eq(" + sonIndex +  ") audio");
     console.log(_etext)
     playEtext = _etext;
     playAudio = _audio;
@@ -242,7 +255,7 @@ function loadPage( index ) {
         return;
     }
     var innText = _etext[0]['innerText'];
-    console.log(innText)
+    // console.log(innText)
     for(var i=0;i< swiperAll.length;i++){
         if(innText == swiperAllIn[i]){
             /*================================================制作歌词 - 开始======================================================================================*/
