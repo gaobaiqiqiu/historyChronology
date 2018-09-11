@@ -212,7 +212,8 @@ $(function(){
 
 /*点击返回时空隧道页*/
 $('.back2').click(function(){
-    window.location.href="tunnel.html";
+    // window.location.href="tunnel.html";
+    window.history.go(-1)
 });
 /*点击按钮播放音频，调用卡拉OK效果*/
 $('.audio').click(function(){
