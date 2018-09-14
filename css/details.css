@@ -128,12 +128,11 @@
 }
 /*朝代内容*/
 .chaoDaiBox #swiper-container2{
-    position: absolute;
+    height: 85%;
     width: 50%;
-    top: 21.6%;
-    left: 46%;
-    height: 70%;
-    
+    position: absolute;
+    top: 2.6%;
+    left: 46%;  
 }
 .chaoDaiBox #swiper-container2 .swiper-slide{
     height: auto;
@@ -147,12 +146,18 @@
     -webkit-filter:drop-shadow(0px 0px 1px #fff);
 }
 
+.chaoDaiBox .swiperIndex {
+    height: 73%;
+    /* background-color: red; */
+    position: relative;
+    top: 17%;
+}
 /*朝代图片*/
 .border{
-    position: absolute;
-    height: 53%;
+    height: 83%;
     width: 37%;
-    top: 19%;
+    position: absolute;
+    top: 0;
     left: 4.4%;
 }
 .border img{
@@ -161,16 +166,6 @@
     border-radius: 5%;
     border: 1px solid #fff;
 }
-/*朝代音频*/
-/*.audioPlay{
-    height: 11%;
-    width: 6%;
-    background-color: red;
-    position: absolute;
-    bottom: 4%;
-    right: 39%;
-}*/
-
 /*改swiper组件*/
 #swiper-container {
     height: 96%;
