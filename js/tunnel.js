@@ -80,7 +80,6 @@ $.ajax({
                 var name2 = document.getElementsByClassName("chaoDai2");
                 chaoDaiC.removeChild(name2[0]);
                 ran2++;
-                console.log(randomAll2[ran2])
                 if(ran2>randomAll2.length-1){
                     ran2 = 0;
                 }
@@ -99,7 +98,6 @@ $.ajax({
                 var name3 = document.getElementsByClassName("chaoDai3");
                 chaoDaiC.removeChild(name3[0]);
                 ran3++;
-                console.log(randomAll3[ran3])
                 if(ran3>randomAll3.length-1){
                     ran3 = 0;
                 }
