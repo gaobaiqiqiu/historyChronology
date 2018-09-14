@@ -1,6 +1,7 @@
 /*点击返回时空隧道页*/
 $('.back2').click(function(){
     // window.location.href="tunnel.html";
+    // window.android.log('返回')
     window.history.go(-1)
 });
 
@@ -126,6 +127,13 @@ $(function(){
                             if(dynastyList[shouSwiperIndex]["dynastyId"]){
                                 sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
                             }
+
+                            if(playAudio){
+                                playAudio[0].pause();
+                                playAudio[0].load();
+                            }
+
+
                             samllIndex = this.activeIndex;
                             showAudio(samllIndex);
 
@@ -147,6 +155,12 @@ $(function(){
                 
                 on:{
                     slideChangeTransitionStart:function(){
+
+                        if(playAudio){
+                            playAudio[0].pause();
+                            playAudio[0].load();
+                        }
+
                         shouSwiperIndex = this.activeIndex;
                         sonIndex = SwiperList[dynastyList[shouSwiperIndex]["dynastyId"]].activeIndex;   //上下滑动的索引
                         showAudio(sonIndex);
@@ -170,6 +184,7 @@ $(function(){
 
 /*点击按钮播放音频*/
 $('.audio').click(function(){
+    // window.android.log('音频')
     if(playAudio[0].paused){
         playAudio[0].play();
     }else{
