@@ -62,3 +62,8 @@ $('.progress .img3').on('touchend',function () {
         'z-index':0
     });
 });
+
+//调用Android的退出app
+$('.back').click(function(){
+    window.android.exitApp();
+})
