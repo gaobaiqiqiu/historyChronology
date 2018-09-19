@@ -127,8 +127,8 @@ $(function(){
                             if(dynastyList[shouSwiperIndex]["dynastyId"]){
                                 sessionStorage.setItem( dynastyList[shouSwiperIndex]["dynastyId"], this.activeIndex );
                             }
-
-                            if(playAudio){
+                            console.log(playAudio)
+                            if(playAudio.length>0){
                                 playAudio[0].pause();
                                 playAudio[0].load();
                             }
@@ -156,7 +156,7 @@ $(function(){
                 on:{
                     slideChangeTransitionStart:function(){
 
-                        if(playAudio){
+                        if(playAudio.length>0){
                             playAudio[0].pause();
                             playAudio[0].load();
                         }
@@ -196,6 +196,7 @@ function showAudio(index) {
     sonIndex = index;
     var _audio = $("#swiper-container .swiperIndex:eq(" + shouSwiperIndex +  ") .swiperWrapperIndex>div:eq(" + sonIndex +  ") audio");
     playAudio = _audio;
+    console.log(playAudio)
  }
 
 
